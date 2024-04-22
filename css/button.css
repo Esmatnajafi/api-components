@@ -1,0 +1,13 @@
+a {
+  color: #3498db;
+}
+a:hover {
+  color: #217dbb;
+}
+
+button {
+  font-size: 10px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}/*# sourceMappingURL=button.css.map */

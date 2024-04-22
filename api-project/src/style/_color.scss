@@ -1,0 +1,13 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$bg-color: #d3d3d3;
+$font-color: #000000;
+
+
+a {
+  color: $primary-color;
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}

@@ -1,0 +1,43 @@
+@import '../../style/color'; 
+@import '../../style/fonts'; 
+@import '../../style/mixin'; 
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2px;
+    padding: 20px 0;
+    background-color: $accent-color;    
+    .card {
+      background-color: $bg-color;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 20px;
+  
+      h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+  
+      img {
+      max-width: 50px;
+      height: 50px;
+      border-radius: 8px; 
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; 
+    
+      &:hover {
+        transform: scale(1.05); 
+      }
+    }
+  
+      p {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+    }
+
+}
+    

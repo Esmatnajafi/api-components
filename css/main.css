@@ -1,0 +1,71 @@
+a {
+  color: #3498db;
+}
+a:hover {
+  color: #217dbb;
+}
+
+button {
+  font-size: 10px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+a {
+  color: #3498db;
+}
+a:hover {
+  color: #217dbb;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 2px;
+  padding: 20px 0;
+  background-color: #e74c3c;
+}
+.container .card {
+  background-color: #d3d3d3;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.container .card h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.container .card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.container .card img:hover {
+  transform: scale(1.05);
+}
+.container .card p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+a {
+  color: #3498db;
+}
+a:hover {
+  color: #217dbb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d3d3d3;
+}/*# sourceMappingURL=main.css.map */
