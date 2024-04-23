@@ -6,6 +6,7 @@ a:hover {
 }
 
 button {
+  background-color: aqua;
   font-size: 10px;
   padding: 10px;
   margin: 10px;
