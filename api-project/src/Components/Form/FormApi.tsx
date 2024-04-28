@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { PhotoApi } from "./PhotoApi";
+import SelectedItemsList from "../ItemList/SelectedItemsList";
 
 const FormApi: React.FC = () => {
   const [newApi, setnewApi] = useState<PhotoApi[]>([]);
 
-  const [selectedItems, setSelectedItems] = useState<boolean[]>([]);
+  const [selectedItems, setSelectedItems] = useState<{ id: number; title: string; quantity: number; price: number; }[]>([]);
 
   useEffect(() => {
     const getApi = async () => {
@@ -18,25 +19,22 @@ const FormApi: React.FC = () => {
     };
     getApi();
   }, []);
-
+  
   const handleClick = (index: number) => {
-    setSelectedItems((prevState) => {
-      const newState = [...prevState];
-      newState[index] = !newState[index];
-      return newState;
-    });
+    const newItem = newApi[index];
+    const existingItem = selectedItems.find((item) => item.id === newItem.id);
+    if (!existingItem) {
+        setSelectedItems((prevState) => [...prevState, { ...newItem, quantity: 1 }]);
+    }
   };
-
-  const toggleExpand = (index: number) => {
-    setSelectedItems((prevState) => {
-      const newState = [...prevState];
-      newState[index] = !newState[index];
-      return newState;
-    });
-  };
+  
 
   return (
     <div className="container">
+        <SelectedItemsList
+        selectedItems={selectedItems}
+        setSelectedItems={setSelectedItems}
+      />
       {newApi.map((itemValue, index) => (
         <div key={itemValue.id} className="card">
           <h4>{itemValue.title}</h4>
@@ -44,7 +42,7 @@ const FormApi: React.FC = () => {
             <img src={itemValue.image} alt={itemValue.title} />
           </div>
           <p>
-            <span>Price:</span> {itemValue.price}
+            <span>Price: </span> {itemValue.price} $
           </p>
           <p>
             <span>Description:</span>{" "}
@@ -54,7 +52,7 @@ const FormApi: React.FC = () => {
             {!selectedItems[index] && (
               <p
                 className="read-more"
-                onClick={() => toggleExpand(index)}
+                onClick={() => handleClick(index)}
               >
                 Read More
               </p>
@@ -64,7 +62,7 @@ const FormApi: React.FC = () => {
             <span>Category:</span> {itemValue.category}
           </p>
           <button onClick={() => handleClick(index)}>Add</button>
-          {selectedItems[index] && <p>Item selected!</p>}
+          {selectedItems.some((selectedItem) => selectedItem.title === itemValue.title) && <p>Item selected!</p>}
         </div>
       ))}
     </div>

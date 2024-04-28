@@ -8,10 +8,10 @@ function App() {
       <h1>API Store Data</h1>
     </div>
     <div>
-      <FormApi />
+      <FormApi /> 
     </div>
     </>
   )
-}
+};
 
 export default App

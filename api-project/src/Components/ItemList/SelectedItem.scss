@@ -1,0 +1,44 @@
+.selected-items-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #5e9beb;
+    padding: 10px;
+    margin-top: 20px;
+  
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+  
+        button {
+          margin-left: 10px;
+          cursor: pointer;
+          border: none;
+          background-color: #61abeb;
+          padding: 5px 10px;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #b7b7b7;
+          }
+        }
+      }
+    }
+    .total-amount {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #5e9beb;
+        margin-top: auto;
+    }
+  }
+  
